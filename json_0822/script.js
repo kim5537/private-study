@@ -29,6 +29,5 @@ from.addEventListener("submit", (e) => {
 
   try {
     if (value === "" || isNaN(value)) throw "숫자입력";
-    value = Number(value);
-  };
+    value = Number(value)
 });
