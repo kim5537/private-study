@@ -1,3 +1,43 @@
-다시 볼 것.
-스크립트 2
-어려워서 보다가 넘어갔다..
+let submitList = [];
+const userId = document.querySelector("#userId");
+
+userId.addEventListener("change", function () {
+  const idErr = /^[a-zA-Z0-9]{6,16}$/g;
+  const idIn = document.querySelector(".iderr");
+  checkarrMinus(submitList, "userId");
+  if (userId.value === "") {
+    idIn.innerText = "";
+    // userId.classList.add("essenBoxs");
+    checkarrMinus(submitList, "userId");
+    console.log(submitList);
+  } else if (!idErr.test(userId.value)) {
+    idIn.innerText = "6자 이상 16자 이하의 영문과 숫자를 조합만 가능합니다.";
+    checkarrMinus(submitList, "userId");
+    console.log(submitList);
+  } else {
+    idIn.innerText = "";
+    submitList.push("userId");
+    console.log(submitList);
+  }
+});
+
+const style = (Elet) => {
+  Elet.style.backgroundColor = "#f9c9d4";
+};
+const styleNone = (Elet) => {
+  Elet.style.backgroundColor = "";
+};
+
+const subColor = (element) => {
+  if (submitList.includes(element)) {
+    styleNone(element);
+  } else {
+    style(element);
+  }
+};
+
+mainBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  subColor(userId);
+});
+배열의 요소를 확인하고 그 값이 들어있으면 해당요소에 스타일을 지우고. 없다면 backgrounde에 색을 주고 싶은데 . 계속 조건이 맞는데 색이 들어와 왜 그런걸까. 한국어로 한줄한줄 주석달아서 코드 짜줘.

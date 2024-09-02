@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function Book(title, price) {
+      this.title = title;
+      this.price = price;
+    }
+
+    Book.prototype.buy = function () {
+      console.log(`${this.title}을 ${this.price}원에 구매하였습니다`);
+    };
+
+    const book1 = new Book("자바스크립트", 1000);
+    book1.buy();
+
+    function Textbook(title, price, major) {
+      Book.call(this, title, price);
+      this.major = major;
+    }
+
+    const conuting = (String, word) => {
+      let count = 0;
+      for (let i = 0; i < string.length; i++) {
+        if (string[i] === word) count += 1;
+      }
+      return count;
+    };
+
+    // const string = prompt("작성하시오");
+    // const word = prompt("찾고 싶은 단어는?");
+    // const result = conuting(string, word);
+
+    // document.write(`${string}에서 ${word}는 ${result}번 사용되었습니다.`);
+
+    const str = "hello my friend";
+    const arr = ["today", "friday", "theday"];
+
+    console.log(str.charAt(4));
+
+    const str5 = "Hello, everyone";
+    const array5 = [...str5];
+    console.log(array5);
+    const str6 = array5.join("");
+    console.log(str6);
+
+    const plants = ["broccoli", "cauliflower", "cabbage", "kale", "tomato"];
+    console.log(plants.pop());
+    console.log(plants);
+    const plants2 = plants.push("banana");
+    console.log(plants);
+  </script>
+</html>
