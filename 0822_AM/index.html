@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const person = {
+      name: {
+        firstName: "kim",
+        lastName: "ryeong",
+      },
+      likes: ["apple", "samsung"],
+    };
+    //값 불러오기
+    //객체
+    console.log(person["name"]["lastName"]);
+    //배열
+    console.log(person["likes"][0]);
+
+    //값변경
+    person["name"]["lastName"] = "kim";
+
+    //값추가
+    person["name"]["middleName"] = "ki";
+    //map
+
+    const arr = [10, 20, 30];
+    const newArr = arr.map((item, index) => {
+      console.log({ item, index });
+    });
+  </script>
+</html>
